@@ -57,11 +57,26 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        electric: {
+          DEFAULT: "hsl(var(--electric-glow))",
+          accent: "hsl(var(--electric-accent))",
+        },
+        tech: {
+          surface: "hsl(var(--tech-surface))",
+          border: "hsl(var(--tech-border))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        "electric-pulse": "electric-pulse 2s ease-in-out infinite",
+        "glow": "glow 2s ease-in-out infinite alternate",
+        "float": "float 6s ease-in-out infinite",
       },
       keyframes: {
         "accordion-down": {
@@ -80,10 +95,26 @@ export default {
             height: "0",
           },
         },
-      },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        "electric-pulse": {
+          "0%, 100%": { 
+            boxShadow: "0 0 20px hsl(var(--electric-glow) / 0.3)" 
+          },
+          "50%": { 
+            boxShadow: "0 0 40px hsl(var(--electric-glow) / 0.8)" 
+          },
+        },
+        "glow": {
+          "0%": { 
+            boxShadow: "0 0 20px hsl(var(--electric-glow) / 0.5)" 
+          },
+          "100%": { 
+            boxShadow: "0 0 30px hsl(var(--electric-glow) / 0.8)" 
+          },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-20px)" },
+        },
       },
     },
   },
